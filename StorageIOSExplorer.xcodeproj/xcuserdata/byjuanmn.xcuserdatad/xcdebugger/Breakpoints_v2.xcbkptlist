@@ -10,13 +10,141 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "StorageIOSExplorer/ContainersTableViewController.swift"
-            timestampString = "497827660.888079"
+            timestampString = "497829250.389439"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "37"
-            endingLineNumber = "37"
+            startingLineNumber = "91"
+            endingLineNumber = "91"
             landmarkName = "addNewContainer(_:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "StorageIOSExplorer/ContainersTableViewController.swift"
+            timestampString = "497829250.389439"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
+            landmarkName = "readAllContainers()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "StorageIOSExplorer/ContainersTableViewController.swift"
+            timestampString = "497829240.774832"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
+            landmarkName = "setupAzureClient()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "StorageIOSExplorer/ContainersTableViewController.swift"
+            timestampString = "497829267.05237"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
+            landmarkName = "readAllContainers()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "StorageIOSExplorer.ContainersTableViewController.readAllContainers () -&gt; ()"
+                  moduleName = "StorageIOSExplorer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/byjuanmn/CloudStation/Formacio%CC%81n/Boot%203/Azure/Show%20me%20the%20code/alumnos/StorageIOSExplorer/StorageIOSExplorer/ContainersTableViewController.swift"
+                  timestampString = "497829267.055974"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "39"
+                  endingLineNumber = "39"
+                  offsetFromSymbolStart = "22">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "StorageIOSExplorer.ContainersTableViewController.(readAllContainers () -&gt; ()).(closure #1)"
+                  moduleName = "StorageIOSExplorer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/byjuanmn/CloudStation/Formacio%CC%81n/Boot%203/Azure/Show%20me%20the%20code/alumnos/StorageIOSExplorer/StorageIOSExplorer/ContainersTableViewController.swift"
+                  timestampString = "497829267.057403"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "41"
+                  endingLineNumber = "41"
+                  offsetFromSymbolStart = "23">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "StorageIOSExplorer/ContainersTableViewController.swift"
+            timestampString = "497829289.704704"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
+            landmarkName = "readAllContainers()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "StorageIOSExplorer.ContainersTableViewController.(readAllContainers () -&gt; ()).(closure #1)"
+                  moduleName = "StorageIOSExplorer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/byjuanmn/CloudStation/Formacio%CC%81n/Boot%203/Azure/Show%20me%20the%20code/alumnos/StorageIOSExplorer/StorageIOSExplorer/ContainersTableViewController.swift"
+                  timestampString = "497829289.708168"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "51"
+                  endingLineNumber = "51"
+                  offsetFromSymbolStart = "1181">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "StorageIOSExplorer.ContainersTableViewController.(readAllContainers () -&gt; ()).(closure #1).(closure #1)"
+                  moduleName = "StorageIOSExplorer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/byjuanmn/CloudStation/Formacio%CC%81n/Boot%203/Azure/Show%20me%20the%20code/alumnos/StorageIOSExplorer/StorageIOSExplorer/ContainersTableViewController.swift"
+                  timestampString = "497829289.709666"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "52"
+                  endingLineNumber = "52"
+                  offsetFromSymbolStart = "12">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
