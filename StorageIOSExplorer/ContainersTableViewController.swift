@@ -36,7 +36,11 @@ class ContainersTableViewController: UITableViewController {
     
     func readAllContainers()  {
         
-        client?.listContainersSegmented(with: nil, prefix: nil, containerListingDetails: AZSContainerListingDetails.all, maxResults: -1, completionHandler: { (error, containersResults) in
+        client?.listContainersSegmented(with: nil,
+                                        prefix: nil,
+                                        containerListingDetails: AZSContainerListingDetails.all,
+                                        maxResults: -1,
+                                        completionHandler: { (error, containersResults) in
             
             if let _ = error {
                 print(error)
@@ -66,7 +70,10 @@ class ContainersTableViewController: UITableViewController {
         
         let blobContainer = client?.containerReference(fromName: name.lowercased())
         
-        blobContainer?.createContainerIfNotExists(with: AZSContainerPublicAccessType.container, requestOptions: nil, operationContext: nil, completionHandler: { (error, result) in
+        blobContainer?.createContainerIfNotExists(with: AZSContainerPublicAccessType.container,
+                                                  requestOptions: nil,
+                                                  operationContext: nil,
+                                                  completionHandler: { (error, result) in
             
             if let _  = error {
                 print(error)
