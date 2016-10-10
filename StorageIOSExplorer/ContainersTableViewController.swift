@@ -43,6 +43,11 @@ class ContainersTableViewController: UITableViewController {
                 return
             }
             
+            if !self.model.isEmpty {
+                self.model.removeAll()
+            }
+            
+            
             for item in (containersResults?.results)! {
                 print(item)
                 self.model.append((item as? AZSCloudBlobContainer)!)
@@ -55,6 +60,27 @@ class ContainersTableViewController: UITableViewController {
             
         })
         
+    }
+    
+    func newContainer(_ name: String) {
+        
+        let blobContainer = client?.containerReference(fromName: name.lowercased())
+        
+        blobContainer?.createContainerIfNotExists(with: AZSContainerPublicAccessType.container, requestOptions: nil, operationContext: nil, completionHandler: { (error, result) in
+            
+            if let _  = error {
+                print(error)
+                return
+            }
+            
+            if result {
+                print("Exito ....... Container creado")
+                self.readAllContainers()
+            } else {
+                print("Ya existe y no lo vuelvo a crear")
+            }
+
+        })
     }
     
     
@@ -89,7 +115,7 @@ class ContainersTableViewController: UITableViewController {
         let actionOk = UIAlertAction(title: "OK", style: .default) { (alertAction) in
             let nameContainer = alert.textFields![0] as UITextField
             print("Boton OK --> \(nameContainer.text)")
-//            self.newContainer(nameContainer.text!)
+            self.newContainer(nameContainer.text!)
             
         }
         let actionCancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
