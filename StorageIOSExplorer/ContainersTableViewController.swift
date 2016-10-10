@@ -12,6 +12,26 @@ class ContainersTableViewController: UITableViewController {
 
     var client: AZSCloudBlobClient?
     
+    
+    
+    func setupAzureClient()  {
+        
+        do {
+            let credentials = AZSStorageCredentials(accountName: "boot3labs",
+                                                    accountKey: "GOBn+lKk47m4yGWh1R/6aq1Kh421g2ymeXD9XmwQAfZcoCkWtBKkpuMU9gX3H1oqoFpykOrQUUFXbjighJ1/Ig==")
+            let account = try AZSCloudStorageAccount(credentials: credentials, useHttps: true)
+            
+            client = account.getBlobClient()
+            
+        } catch let error {
+            print(error)
+        }
+        
+    }
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -20,6 +40,10 @@ class ContainersTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        setupAzureClient()
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -28,6 +52,26 @@ class ContainersTableViewController: UITableViewController {
     }
 
     @IBAction func addNewContainer(_ sender: AnyObject) {
+        
+        let alert = UIAlertController(title: "Nuevo Container", message: "Escribe un nombre de 3 a 24 caracteres", preferredStyle: .alert)
+        
+        
+        let actionOk = UIAlertAction(title: "OK", style: .default) { (alertAction) in
+            let nameContainer = alert.textFields![0] as UITextField
+            print("Boton OK --> \(nameContainer.text)")
+//            self.newContainer(nameContainer.text!)
+            
+        }
+        let actionCancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        alert.addAction(actionOk)
+        alert.addAction(actionCancel)
+        alert.addTextField { (textField) in
+            
+            textField.placeholder = "Introduce un nombre para el container"
+            
+        }
+        present(alert, animated: true, completion: nil)
+
     }
     // MARK: - Table view data source
 
