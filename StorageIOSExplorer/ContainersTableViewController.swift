@@ -12,13 +12,15 @@ class ContainersTableViewController: UITableViewController {
 
     var client: AZSCloudBlobClient?
     
+    var model: [AZSCloudBlobContainer] = []
+    
     
     
     func setupAzureClient()  {
         
         do {
             let credentials = AZSStorageCredentials(accountName: "boot3labs",
-                                                    accountKey: "GOBn+lKk47m4yGWh1R/6aq1Kh421g2ymeXD9XmwQAfZcoCkWtBKkpuMU9gX3H1oqoFpykOrQUUFXbjighJ1/Ig==")
+                                                    accountKey: "ABti2NrWg8plTrGU90DrPTSqNsTOaZyq5Gok8cm31lnbbYDcjqv/aZTakQnTbIpqkuQMjEhCh62GWg6BWUYcuQ==")
             let account = try AZSCloudStorageAccount(credentials: credentials, useHttps: true)
             
             client = account.getBlobClient()
@@ -28,6 +30,32 @@ class ContainersTableViewController: UITableViewController {
         }
         
     }
+    
+    
+    func readAllContainers()  {
+        
+        client?.listContainersSegmented(with: nil, prefix: nil, containerListingDetails: AZSContainerListingDetails.all, maxResults: -1, completionHandler: { (error, containersResults) in
+            
+            if let _ = error {
+                print(error)
+                return
+            }
+            
+            for item in (containersResults?.results)! {
+                print(item)
+                self.model.append((item as? AZSCloudBlobContainer)!)
+            }
+            
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+            
+            
+        })
+        
+    }
+    
+    
     
     
     
