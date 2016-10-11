@@ -48,8 +48,8 @@
         <scene sceneID="sg2-pe-rXq">
             <objects>
                 <tableViewController id="UTA-h8-arv" customClass="ContainerTableViewController" customModule="StorageIOSExplorer" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="p3f-0T-g0h">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="p3f-0T-g0h">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -67,6 +67,15 @@
                             <outlet property="delegate" destination="UTA-h8-arv" id="0zS-7c-bHg"/>
                         </connections>
                     </tableView>
+                    <extendedEdge key="edgesForExtendedLayout" top="YES"/>
+                    <toolbarItems>
+                        <barButtonItem title="Subir Blob" id="THL-3Q-T6I">
+                            <connections>
+                                <action selector="addBlobToStorage:" destination="UTA-h8-arv" id="DYB-R2-uFT"/>
+                            </connections>
+                        </barButtonItem>
+                    </toolbarItems>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rDe-HC-cf5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

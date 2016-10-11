@@ -29,8 +29,56 @@ class ContainerTableViewController: UITableViewController {
         
         readAllBlobs()
         
+//        uploadBlob()
+        
     }
     
+    @IBAction func addBlobToStorage(_ sender: AnyObject) {
+        
+        uploadBlob()
+    }
+    
+    func uploadBlob(){
+        
+        // crear el blob local
+        
+        let myBlob = container?.blockBlobReference(fromName: UUID().uuidString)
+        
+        // tomamos una foto o la cogemos de los recursos
+        
+        let image = UIImage(named: "winter-is-coming.jpg")
+        
+        // subir
+        
+        myBlob?.upload(from: UIImageJPEGRepresentation(image!, 0.5)!, completionHandler: { (error) in
+            
+            if error != nil {
+                print(error)
+                return
+            }
+            self.readAllBlobs()
+
+        })
+        
+    }
+    
+    func downloadBlobFromStorage(_ theBlob: AZSCloudBlockBlob) {
+        
+        theBlob.downloadToData { (error, data) in
+            
+            if let _ = error {
+                print(error)
+                return
+            }
+            
+            if let _ = data {
+                var img = UIImage(data: data!)
+                print("Imagen ok")
+            }
+            
+        }
+        
+    }
     
     func eraseBlobBlock(_ theBlob: AZSCloudBlockBlob) {
         
@@ -117,6 +165,11 @@ class ContainerTableViewController: UITableViewController {
     }
     */
 
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let item = self.model[indexPath.row]
+        
+        downloadBlobFromStorage(item)
+    }
     
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {

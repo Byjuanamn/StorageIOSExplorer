@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5DB476C41DAD6C890053BB4F /* ContainerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB476C31DAD6C890053BB4F /* ContainerTableViewController.swift */; };
+		5DB476C61DAD77550053BB4F /* winter-is-coming.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5DB476C51DAD77550053BB4F /* winter-is-coming.jpg */; };
 		5DC58B061DAC2EAA006A9118 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC58B051DAC2EAA006A9118 /* AppDelegate.swift */; };
 		5DC58B0B1DAC2EAA006A9118 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DC58B091DAC2EAA006A9118 /* Main.storyboard */; };
 		5DC58B0D1DAC2EAA006A9118 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5DC58B0C1DAC2EAA006A9118 /* Assets.xcassets */; };
@@ -19,6 +20,7 @@
 
 /* Begin PBXFileReference section */
 		5DB476C31DAD6C890053BB4F /* ContainerTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerTableViewController.swift; sourceTree = "<group>"; };
+		5DB476C51DAD77550053BB4F /* winter-is-coming.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "winter-is-coming.jpg"; sourceTree = "<group>"; };
 		5DC58B021DAC2EAA006A9118 /* StorageIOSExplorer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StorageIOSExplorer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DC58B051DAC2EAA006A9118 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5DC58B0A1DAC2EAA006A9118 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -48,6 +50,7 @@
 		5DC58AF91DAC2EAA006A9118 = {
 			isa = PBXGroup;
 			children = (
+				5DB476C51DAD77550053BB4F /* winter-is-coming.jpg */,
 				5DC58B171DAC2EBD006A9118 /* Frameworks */,
 				5DC58B041DAC2EAA006A9118 /* StorageIOSExplorer */,
 				5DC58B031DAC2EAA006A9118 /* Products */,
@@ -159,6 +162,7 @@
 				5DC58B101DAC2EAA006A9118 /* LaunchScreen.storyboard in Resources */,
 				5DC58B0D1DAC2EAA006A9118 /* Assets.xcassets in Resources */,
 				5DC58B0B1DAC2EAA006A9118 /* Main.storyboard in Resources */,
+				5DB476C61DAD77550053BB4F /* winter-is-coming.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
