@@ -12,6 +12,9 @@ class ContainerTableViewController: UITableViewController {
 
     var client: AZSCloudBlobClient?
     var container: AZSCloudBlobContainer?
+    var model: [AZSCloudBlockBlob] = []
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +27,37 @@ class ContainerTableViewController: UITableViewController {
         
         title = container?.name
         
+        readAllBlobs()
+        
+    }
+    
+    func readAllBlobs()  {
+        
+        container?.listBlobsSegmented(with: nil,
+                                      prefix: nil,
+                                      useFlatBlobListing: true,
+                                      blobListingDetails: AZSBlobListingDetails.all,
+                                      maxResults: -1,
+                                      completionHandler: { (error, results) in
+                                        
+                                        if let _ = error {
+                                            print(error)
+                                            return
+                                        }
+                                        
+                                        if !self.model.isEmpty {
+                                            self.model.removeAll()
+                                        }
+                                        
+                                        for items in (results?.blobs)! {
+                                            self.model.append(items as! AZSCloudBlockBlob)
+                                        }
+                                        
+                                        DispatchQueue.main.async {
+                                            self.tableView.reloadData()
+                                        }
+        })
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -34,24 +68,29 @@ class ContainerTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        if model.isEmpty {
+            return 0
+        }
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        if model.isEmpty {
+            return 0
+        }
+        return model.count
     }
 
-    /*
+  
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CELDABLOB", for: indexPath)
+        
+        let item = model[indexPath.row]
+        cell.textLabel?.text = item.blobName
 
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.
