@@ -29,7 +29,7 @@ class ContainerTableViewController: UITableViewController {
         
         readAllBlobs()
         
-//        uploadBlob()
+        uploadBlobWithSAS()
         
     }
     
@@ -61,6 +61,48 @@ class ContainerTableViewController: UITableViewController {
         })
         
     }
+    
+    func uploadBlobWithSAS()  {
+        
+        
+        do {
+            
+            let sas = "sv=2015-04-05&ss=b&srt=sco&sp=rwa&se=2016-10-11T22:45:00Z&st=2016-10-11T20:13:53Z&spr=https&sig=whpBrxtJks0EOjRTx77sEcmMmRxX2Bv1iRj1ww2ATiQ%3D"
+            
+            let credentials = AZSStorageCredentials(sasToken: sas, accountName: "boot3labs")
+            
+            let accout = try AZSCloudStorageAccount(credentials: credentials, useHttps: true)
+            
+            let client = accout.getBlobClient()
+            
+            
+            let conti = client?.containerReference(fromName: (self.container?.name)!)
+            
+            let theBlob = conti?.blockBlobReference(fromName: UUID().uuidString)
+            // tomamos una foto o la cogemos de los recursos
+            
+            let image = UIImage(named: "winter-is-coming.jpg")
+            
+            // subir
+            
+            theBlob?.upload(from: UIImageJPEGRepresentation(image!, 0.5)!, completionHandler: { (error) in
+                
+                if error != nil {
+                    print(error)
+                    return
+                }
+                self.readAllBlobs()
+                
+            })
+            
+            
+        
+        } catch let ex {
+            print(ex)
+        }
+        
+    }
+    
     
     func downloadBlobFromStorage(_ theBlob: AZSCloudBlockBlob) {
         
@@ -157,13 +199,7 @@ class ContainerTableViewController: UITableViewController {
     }
     
 
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
+    
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let item = self.model[indexPath.row]
@@ -190,30 +226,5 @@ class ContainerTableViewController: UITableViewController {
         }    
     }
     
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
