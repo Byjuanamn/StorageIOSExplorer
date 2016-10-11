@@ -31,6 +31,23 @@ class ContainerTableViewController: UITableViewController {
         
     }
     
+    
+    func eraseBlobBlock(_ theBlob: AZSCloudBlockBlob) {
+        
+        theBlob.delete { (error) in
+            
+            if let _ = error {
+                print(error)
+                return
+            }
+            
+            self.readAllBlobs()
+            
+        }
+    }
+    
+    
+    
     func readAllBlobs()  {
         
         container?.listBlobsSegmented(with: nil,
@@ -100,17 +117,26 @@ class ContainerTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
+            
+            tableView.beginUpdates()
             tableView.deleteRows(at: [indexPath], with: .fade)
+            let item = self.model[indexPath.row]
+            model.remove(at: indexPath.row)
+            self.eraseBlobBlock(item)
+            
+            tableView.endUpdates()
+            
+            
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
     }
-    */
+    
 
     /*
     // Override to support rearranging the table view.
