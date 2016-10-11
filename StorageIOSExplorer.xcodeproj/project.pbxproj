@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5DB476C41DAD6C890053BB4F /* ContainerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB476C31DAD6C890053BB4F /* ContainerTableViewController.swift */; };
 		5DC58B061DAC2EAA006A9118 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC58B051DAC2EAA006A9118 /* AppDelegate.swift */; };
 		5DC58B0B1DAC2EAA006A9118 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DC58B091DAC2EAA006A9118 /* Main.storyboard */; };
 		5DC58B0D1DAC2EAA006A9118 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5DC58B0C1DAC2EAA006A9118 /* Assets.xcassets */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5DB476C31DAD6C890053BB4F /* ContainerTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerTableViewController.swift; sourceTree = "<group>"; };
 		5DC58B021DAC2EAA006A9118 /* StorageIOSExplorer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StorageIOSExplorer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DC58B051DAC2EAA006A9118 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5DC58B0A1DAC2EAA006A9118 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 			isa = PBXGroup;
 			children = (
 				5DC58B261DAC39C3006A9118 /* ContainersTableViewController.swift */,
+				5DB476C31DAD6C890053BB4F /* ContainerTableViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -167,6 +170,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5DC58B061DAC2EAA006A9118 /* AppDelegate.swift in Sources */,
+				5DB476C41DAD6C890053BB4F /* ContainerTableViewController.swift in Sources */,
 				5DC58B271DAC39C3006A9118 /* ContainersTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -344,6 +348,7 @@
 				5DC58B161DAC2EAA006A9118 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
